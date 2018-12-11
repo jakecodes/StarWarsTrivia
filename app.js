@@ -27,7 +27,9 @@ function initTest(){
 	$('#startTest').click(function(e) {
 	$.getJSON('https://swapi.co/api/people/' + randomCharacter + '/', function(data) {
 			//GUESS CHECKING
+
 			$(submitBtn).click(function(){
+				//LOSING LOGIC
 				if(guessCounter == 0){
 	 				mainTxt.text('lost');
 
@@ -35,6 +37,13 @@ function initTest(){
 	 				$(hintBox).hide();
 	 				$('#secondTxt').hide();
 	 				$(inputTxt).hide();
+	 			}else if(data.name.toLowerCase() === inputTxt.val().toLowerCase()){
+	 				mainTxt.text('You Win!')
+	 				$(backgroundTxt).hide();
+	 				$(hintBox).hide();
+	 				$('#secondTxt').hide();
+	 				$(inputTxt).hide();
+
 	 			} else{
 	 				guessCounter--;
 	 				const chanceTxt = 'Chances Left: ' + guessCounter;
