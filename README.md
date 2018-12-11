@@ -7,3 +7,5 @@ Things To Improve:
   - add a character search feature
   - fix a bug with my loader
   - optimize the code a little better
+  - fix guess checking with dialect and accent marks
+  - add a retry option
